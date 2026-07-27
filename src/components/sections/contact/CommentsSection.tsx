@@ -59,15 +59,19 @@ export default function CommentsSection() {
         ease: smoothEase,
       }}
       viewport={{ once: false, amount: 0.2 }}
-      className="rounded-[28px] border border-slate-200 dark:border-[#30363D] bg-white dark:bg-[#161B22] shadow-sm p-5 md:p-6 text-slate-900 dark:text-[#C9D1D9]"
+      style={{
+        backgroundColor: '#FFFFFF',
+        borderColor: '#E2E8F0',
+      }}
+      className="rounded-[28px] border shadow-md p-5 md:p-6 text-slate-900"
     >
       {/* HEADER */}
       <div className="mb-4">
-        <h3 className="text-xl md:text-2xl font-bold mb-1 text-slate-900 dark:text-[#C9D1D9]">
+        <h3 style={{ color: '#0F172A' }} className="text-xl md:text-2xl font-bold mb-1">
           Comments
         </h3>
 
-        <p className="text-xs md:text-sm text-slate-500 dark:text-[#8B949E] font-normal">
+        <p style={{ color: '#334155' }} className="text-xs md:text-sm font-normal">
           Leave your thoughts here
         </p>
       </div>
@@ -85,7 +89,12 @@ export default function CommentsSection() {
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Your Name"
-          className="w-full rounded-xl border border-slate-200 dark:border-[#30363D] bg-slate-50/70 dark:bg-[#0D1117] text-slate-900 dark:text-[#C9D1D9] placeholder:text-slate-400 dark:placeholder:text-[#8B949E] px-4 py-2.5 outline-none focus:border-blue-600 dark:focus:border-[#58A6FF] focus:bg-white dark:focus:bg-[#0D1117] focus:ring-2 focus:ring-blue-500/20 transition-all text-xs md:text-sm"
+          style={{
+            backgroundColor: '#F8FAFC',
+            borderColor: '#E2E8F0',
+            color: '#0F172A',
+          }}
+          className="w-full rounded-xl border placeholder:text-slate-400 px-4 py-2.5 outline-none focus:border-blue-600 focus:bg-white focus:ring-2 focus:ring-blue-500/20 transition-all text-xs md:text-sm"
         />
 
         <motion.textarea
@@ -94,7 +103,12 @@ export default function CommentsSection() {
           value={comment}
           onChange={(e) => setComment(e.target.value)}
           placeholder="Your Comment"
-          className="w-full rounded-xl border border-slate-200 dark:border-[#30363D] bg-slate-50/70 dark:bg-[#0D1117] text-slate-900 dark:text-[#C9D1D9] placeholder:text-slate-400 dark:placeholder:text-[#8B949E] px-4 py-2.5 outline-none resize-none focus:border-blue-600 dark:focus:border-[#58A6FF] focus:bg-white dark:focus:bg-[#0D1117] focus:ring-2 focus:ring-blue-500/20 transition-all text-xs md:text-sm"
+          style={{
+            backgroundColor: '#F8FAFC',
+            borderColor: '#E2E8F0',
+            color: '#0F172A',
+          }}
+          className="w-full rounded-xl border placeholder:text-slate-400 px-4 py-2.5 outline-none resize-none focus:border-blue-600 focus:bg-white focus:ring-2 focus:ring-blue-500/20 transition-all text-xs md:text-sm"
         />
 
         <motion.button
@@ -103,7 +117,7 @@ export default function CommentsSection() {
           whileTap={{ scale: 0.98 }}
           onClick={handleSubmit}
           disabled={loading}
-          className="w-full rounded-xl py-3 bg-[#2563EB] dark:bg-[#58A6FF] hover:bg-[#1D4ED8] dark:hover:bg-[#79C0FF] text-white dark:text-[#0D1117] font-semibold shadow-md transition-all text-sm"
+          className="w-full rounded-xl py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-md transition-all text-sm"
         >
           {loading ? 'Posting...' : 'Post Comment'}
         </motion.button>
@@ -116,7 +130,11 @@ export default function CommentsSection() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: false }}
-          className="rounded-2xl border border-slate-200 dark:border-[#30363D] bg-slate-50/60 dark:bg-[#0D1117] p-3 max-h-[300px] overflow-y-auto custom-scroll"
+          style={{
+            backgroundColor: '#F8FAFC',
+            borderColor: '#E2E8F0',
+          }}
+          className="rounded-2xl border p-3 max-h-[300px] overflow-y-auto custom-scroll"
         >
           <div className="space-y-3">
             <AnimatePresence initial={false}>
@@ -143,39 +161,39 @@ export default function CommentsSection() {
                     duration: 0.4,
                     ease: smoothEase,
                   }}
-                  className={`rounded-xl border p-3 shadow-xs ${
-                    item.is_pinned
-                      ? 'border-indigo-300 dark:border-indigo-700 bg-indigo-50/60 dark:bg-indigo-950/40'
-                      : 'border-slate-200 dark:border-[#30363D] bg-white dark:bg-[#161B22]'
-                  }`}
+                  style={{
+                    backgroundColor: item.is_pinned ? '#EEF2FF' : '#FFFFFF',
+                    borderColor: item.is_pinned ? '#C7D2FE' : '#E2E8F0',
+                  }}
+                  className="rounded-xl border p-3 shadow-xs"
                 >
                   <div className="flex gap-3">
-                    <div className="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-[#58A6FF] font-bold flex items-center justify-center text-xs shrink-0">
+                    <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-700 font-bold flex items-center justify-center text-xs shrink-0">
                       {item.name?.charAt(0)}
                     </div>
 
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1 flex-wrap">
-                        <p className="text-xs font-bold text-slate-900 dark:text-[#C9D1D9]">
+                        <p style={{ color: '#0F172A' }} className="text-xs font-bold">
                           {item.name}
                         </p>
 
                         {item.is_pinned && (
-                          <div className="flex items-center gap-1 px-2 py-[2px] rounded-full bg-indigo-100 dark:bg-indigo-900/60 border border-indigo-200 dark:border-indigo-700 text-[10px] font-semibold text-indigo-700 dark:text-indigo-300">
+                          <div className="flex items-center gap-1 px-2 py-[2px] rounded-full bg-indigo-100 border border-indigo-200 text-[10px] font-semibold text-indigo-700">
                             <Pin size={10} />
                             PINNED
                           </div>
                         )}
                       </div>
 
-                      <p className="text-xs text-slate-600 dark:text-[#8B949E] leading-relaxed">
+                      <p style={{ color: '#334155' }} className="text-xs leading-relaxed">
                         {item.comment}
                       </p>
                     </div>
 
                     <button
                       onClick={() => likeComment(item.id, item.likes)}
-                      className="flex items-center gap-1 text-[11px] font-semibold text-slate-500 dark:text-[#8B949E] hover:text-rose-600 dark:hover:text-rose-400 transition-colors"
+                      className="flex items-center gap-1 text-[11px] font-semibold text-slate-500 hover:text-rose-600 transition-colors"
                     >
                       <Heart size={12} className="hover:fill-rose-500" />
                       {item.likes || 0}

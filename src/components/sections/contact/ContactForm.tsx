@@ -73,7 +73,11 @@ export default function ContactForm() {
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8, ease: smoothEase }}
       viewport={{ once: false, amount: 0.2 }}
-      className="rounded-[28px] border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800/90 p-5 md:p-8 flex flex-col h-full shadow-sm"
+      style={{
+        backgroundColor: '#FFFFFF',
+        borderColor: '#E2E8F0',
+      }}
+      className="rounded-[28px] border p-5 md:p-8 flex flex-col h-full shadow-md"
     >
       {/* HEADER */}
       <motion.div
@@ -83,11 +87,11 @@ export default function ContactForm() {
         viewport={{ once: false }}
         transition={{ delay: 0.05 }}
       >
-        <h2 className="text-2xl md:text-3xl font-bold mb-3 text-slate-900 dark:text-slate-100">
+        <h2 style={{ color: '#0F172A' }} className="text-2xl md:text-3xl font-bold mb-3">
           Get In Touch
         </h2>
 
-        <p className="text-sm text-slate-600 dark:text-slate-400 mb-7 font-normal">
+        <p style={{ color: '#334155' }} className="text-sm mb-7 font-normal">
           Feel free to reach out if you want to collaborate,
           discuss AI ideas, or simply say hello.
         </p>
@@ -104,11 +108,16 @@ export default function ContactForm() {
           transition={{ delay: 0.1 }}
         >
           <div className="relative">
-            <User className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500" />
+            <User className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
 
             <input
               placeholder="Your Name"
-              className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50/70 dark:bg-slate-900/60 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 pl-12 pr-4 py-4 outline-none transition duration-200 focus:border-blue-600 dark:focus:border-blue-400 focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-blue-500/20"
+              style={{
+                backgroundColor: '#F8FAFC',
+                borderColor: '#E2E8F0',
+                color: '#0F172A',
+              }}
+              className="w-full rounded-2xl border placeholder:text-slate-400 pl-12 pr-4 py-4 outline-none transition duration-200 focus:border-blue-600 focus:bg-white focus:ring-2 focus:ring-blue-500/20"
             />
           </div>
         </motion.div>
@@ -122,11 +131,16 @@ export default function ContactForm() {
           transition={{ delay: 0.16 }}
         >
           <div className="relative">
-            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500" />
+            <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
 
             <input
               placeholder="Your Email"
-              className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50/70 dark:bg-slate-900/60 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 pl-12 pr-4 py-4 outline-none transition duration-200 focus:border-blue-600 dark:focus:border-blue-400 focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-blue-500/20"
+              style={{
+                backgroundColor: '#F8FAFC',
+                borderColor: '#E2E8F0',
+                color: '#0F172A',
+              }}
+              className="w-full rounded-2xl border placeholder:text-slate-400 pl-12 pr-4 py-4 outline-none transition duration-200 focus:border-blue-600 focus:bg-white focus:ring-2 focus:ring-blue-500/20"
             />
           </div>
         </motion.div>
@@ -140,12 +154,17 @@ export default function ContactForm() {
           transition={{ delay: 0.22 }}
         >
           <div className="relative">
-            <MessageSquare className="absolute left-4 top-5 text-slate-400 dark:text-slate-500" />
+            <MessageSquare className="absolute left-4 top-5 text-slate-400" />
 
             <textarea
               rows={5}
               placeholder="Your Message"
-              className="w-full rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50/70 dark:bg-slate-900/60 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 pl-12 pr-4 py-4 outline-none resize-none transition duration-200 focus:border-blue-600 dark:focus:border-blue-400 focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-blue-500/20"
+              style={{
+                backgroundColor: '#F8FAFC',
+                borderColor: '#E2E8F0',
+                color: '#0F172A',
+              }}
+              className="w-full rounded-2xl border placeholder:text-slate-400 pl-12 pr-4 py-4 outline-none resize-none transition duration-200 focus:border-blue-600 focus:bg-white focus:ring-2 focus:ring-blue-500/20"
             />
           </div>
         </motion.div>
@@ -162,7 +181,7 @@ export default function ContactForm() {
             transition: { duration: 0.12 },
           }}
           whileTap={{ scale: 0.97 }}
-          className="w-full rounded-2xl py-4 bg-[#2563EB] dark:bg-blue-600 hover:bg-[#1D4ED8] dark:hover:bg-blue-500 text-white font-semibold flex items-center justify-center gap-2 shadow-md transition-all"
+          className="w-full rounded-2xl py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold flex items-center justify-center gap-2 shadow-md transition-all"
         >
           <Send size={16} />
           Send Message
@@ -170,14 +189,15 @@ export default function ContactForm() {
       </div>
 
       {/* SOCIAL */}
-      <div className="border-t border-slate-200 dark:border-slate-700/60 pt-5 mt-6">
+      <div style={{ borderColor: '#F1F5F9' }} className="border-t pt-5 mt-6">
         <motion.p
           variants={fieldVariants}
           initial="hidden"
           whileInView="show"
           viewport={{ once: false }}
           transition={{ delay: 0.34 }}
-          className="text-sm text-slate-600 dark:text-slate-400 font-medium mb-4"
+          style={{ color: '#475569' }}
+          className="text-sm font-medium mb-4"
         >
           Connect With Me
         </motion.p>
@@ -204,15 +224,19 @@ export default function ContactForm() {
                   scale: 1.02,
                   transition: { duration: 0.12 },
                 }}
-                className="group relative overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50/60 dark:bg-slate-900/40 p-3 flex items-center justify-between hover:border-blue-500/40 dark:hover:border-blue-400/50 hover:bg-white dark:hover:bg-slate-800 transition-all shadow-xs"
+                style={{
+                  backgroundColor: '#F8FAFC',
+                  borderColor: '#E2E8F0',
+                }}
+                className="group relative overflow-hidden rounded-2xl border p-3 flex items-center justify-between hover:border-blue-400 hover:bg-white transition-all shadow-xs"
               >
                 <div className="relative z-10 flex items-center gap-3">
-                  <Icon className="text-slate-700 dark:text-slate-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
+                  <Icon className="text-slate-700 group-hover:text-blue-600 transition-colors" />
 
                   <div>
-                    <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">{item.title}</p>
+                    <p style={{ color: '#0F172A' }} className="text-sm font-semibold">{item.title}</p>
                     {item.user && (
-                      <p className="text-[11px] text-slate-500 dark:text-slate-400">
+                      <p style={{ color: '#64748B' }} className="text-[11px]">
                         {item.user}
                       </p>
                     )}
@@ -220,7 +244,7 @@ export default function ContactForm() {
                 </div>
 
                 <div className="relative z-10 opacity-0 group-hover:opacity-100 transition">
-                  <div className="w-6 h-6 rounded-md bg-blue-50 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+                  <div className="w-6 h-6 rounded-md bg-blue-50 text-blue-600 flex items-center justify-center">
                     <ArrowUpRight size={12} />
                   </div>
                 </div>
