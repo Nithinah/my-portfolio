@@ -137,7 +137,7 @@ export default function WelcomeScreen() {
               Welcome
             </motion.span>
 
-            {/* to my */}
+            {/* to Nithin's */}
             <motion.span
               initial={{ opacity: 0, x: -120 }}
               animate={{ opacity: 1, x: 0 }}
@@ -152,7 +152,7 @@ export default function WelcomeScreen() {
                 letterSpacing: '-0.05em',
               }}
             >
-              to my
+              to Nithin&apos;s
             </motion.span>
           </div>
 
@@ -175,7 +175,7 @@ export default function WelcomeScreen() {
               whiteSpace: 'nowrap',
             }}
           >
-            Portfolio Website
+            Portfolio
           </motion.h1>
         </div>
 
