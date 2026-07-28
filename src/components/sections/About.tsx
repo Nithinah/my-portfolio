@@ -321,21 +321,28 @@ export default function About() {
                 width: "48%",
                 display: "flex",
                 justifyContent: "flex-end",
-                transform: "translateX(-40px)",
               }}
             >
-              <div
+              <motion.div
+                initial="initial"
+                whileHover="hover"
                 style={{
                   position: "relative",
-                  width: "320px",
-                  height: "400px",
-                  borderRadius: "32px",
-                  border: "2px solid #3b82f6",
-                  boxShadow: "0 0 30px rgba(59, 130, 246, 0.2)",
+                  width: 240,
+                  height: 240,
+                  borderRadius: "50%",
+                  border: "1px solid var(--border)",
+                  transform: "translateX(-80px)",
                   overflow: "hidden",
+                  cursor: "pointer",
                 }}
               >
-                <img
+                <motion.img
+                  variants={{
+                    initial: { filter: "brightness(1)" },
+                    hover: { filter: "brightness(0.4)" }
+                  }}
+                  transition={{ duration: 0.3 }}
                   src="/assets/PP.png"
                   alt="Profile"
                   style={{
@@ -343,12 +350,16 @@ export default function About() {
                     height: "100%",
                     objectFit: "cover",
                     display: "block",
-                    filter: "brightness(0.4)",
                   }}
                 />
                 
-                {/* Overlay Content */}
-                <div
+                {/* Hover Overlay Content */}
+                <motion.div
+                  variants={{
+                    initial: { opacity: 0 },
+                    hover: { opacity: 1 }
+                  }}
+                  transition={{ duration: 0.3 }}
                   style={{
                     position: "absolute",
                     inset: 0,
@@ -359,36 +370,20 @@ export default function About() {
                     color: "white",
                   }}
                 >
-                  <div style={{ display: "flex", gap: "60px", marginBottom: "40px" }}>
+                  <div style={{ display: "flex", gap: "24px" }}>
                     <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                      <Layers size={28} color="#3b82f6" style={{ marginBottom: "12px" }} />
-                      <span style={{ fontSize: "32px", fontWeight: "bold" }}>{projectCount}</span>
-                      <span style={{ fontSize: "14px", fontWeight: 500, opacity: 0.9 }}>Projects</span>
+                      <Layers size={22} color="#3b82f6" style={{ marginBottom: "8px" }} />
+                      <span style={{ fontSize: "22px", fontWeight: "bold" }}>6+</span>
+                      <span style={{ fontSize: "11px", fontWeight: 500, opacity: 0.9 }}>Projects</span>
                     </div>
                     <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                      <Briefcase size={28} color="#3b82f6" style={{ marginBottom: "12px" }} />
-                      <span style={{ fontSize: "32px", fontWeight: "bold" }}>1+ Yrs</span>
-                      <span style={{ fontSize: "14px", fontWeight: 500, opacity: 0.9 }}>Experience</span>
+                      <Briefcase size={22} color="#3b82f6" style={{ marginBottom: "8px" }} />
+                      <span style={{ fontSize: "22px", fontWeight: "bold" }}>6 Mos</span>
+                      <span style={{ fontSize: "11px", fontWeight: 500, opacity: 0.9 }}>Experience</span>
                     </div>
                   </div>
-                  
-                  <div
-                    style={{
-                      position: "absolute",
-                      bottom: "32px",
-                      padding: "10px 28px",
-                      borderRadius: "999px",
-                      border: "1px solid rgba(255,255,255,0.4)",
-                      background: "rgba(255,255,255,0.15)",
-                      backdropFilter: "blur(8px)",
-                      fontSize: "14px",
-                      fontWeight: 500,
-                    }}
-                  >
-                    @nithinv
-                  </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </motion.div>
           )}
         </div>
