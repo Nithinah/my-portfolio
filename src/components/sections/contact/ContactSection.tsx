@@ -2,8 +2,6 @@
 
 import { motion } from 'framer-motion'
 import ContactForm from './ContactForm'
-import CommentsSection from './CommentsSection'
-
 const smoothEase: [number, number, number, number] = [
   0.22,
   1,
@@ -48,24 +46,9 @@ export default function ContactSection() {
       </motion.div>
 
       {/* CONTENT */}
-      <div
-        className="
-        grid 
-        grid-cols-1 
-        md:grid-cols-1 
-        lg:grid-cols-[420px_1fr] 
-        gap-6 sm:gap-8 md:gap-10 lg:gap-12
-      "
-      >
+      <div className="w-full max-w-3xl mx-auto">
         {/* FORM */}
-        <div className="w-full">
-          <ContactForm />
-        </div>
-
-        {/* COMMENTS */}
-        <div className="w-full">
-          <CommentsSection />
-        </div>
+        <ContactForm />
       </div>
       {/* COPYRIGHT */}
       <div className="mt-10 text-center text-xs text-slate-400 dark:text-slate-500">
