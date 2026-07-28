@@ -113,10 +113,10 @@ export default function WelcomeScreen() {
           <div
             style={{
               display: 'flex',
+              flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
               gap: '6px',
-              flexWrap: 'wrap',
             }}
           >
             {/* Welcome */}
@@ -132,6 +132,7 @@ export default function WelcomeScreen() {
                 fontSize: 'clamp(18px, 3vw, 30px)',
                 fontWeight: 800,
                 letterSpacing: '-0.05em',
+                whiteSpace: 'nowrap',
               }}
             >
               Welcome to
@@ -150,6 +151,7 @@ export default function WelcomeScreen() {
                 fontSize: 'clamp(18px, 3vw, 30px)',
                 fontWeight: 800,
                 letterSpacing: '-0.05em',
+                whiteSpace: 'nowrap',
               }}
             >
               Nithin&apos;s Portfolio
