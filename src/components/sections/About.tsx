@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, Variants } from "framer-motion";
-import { Code, Award, Globe, FileText, ArrowUpRight } from "lucide-react";
+import { Code, Award, Globe, FileText, ArrowUpRight, Layers, Briefcase } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 
 /* ================== ANIMATION ================== */
@@ -321,27 +321,73 @@ export default function About() {
                 width: "48%",
                 display: "flex",
                 justifyContent: "flex-end",
+                transform: "translateX(-40px)",
               }}
             >
               <div
                 style={{
-                  padding: 12,
-                  borderRadius: "50%",
-                  border: "1px solid var(--border)",
-                  transform: "translateX(-80px)",
+                  position: "relative",
+                  width: "320px",
+                  height: "400px",
+                  borderRadius: "32px",
+                  border: "2px solid #3b82f6",
+                  boxShadow: "0 0 30px rgba(59, 130, 246, 0.2)",
+                  overflow: "hidden",
                 }}
               >
                 <img
                   src="/assets/PP.png"
                   alt="Profile"
                   style={{
-                    width: 240,
-                    height: 240,
-                    borderRadius: "50%",
+                    width: "100%",
+                    height: "100%",
                     objectFit: "cover",
                     display: "block",
+                    filter: "brightness(0.4)",
                   }}
                 />
+                
+                {/* Overlay Content */}
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    color: "white",
+                  }}
+                >
+                  <div style={{ display: "flex", gap: "60px", marginBottom: "40px" }}>
+                    <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                      <Layers size={28} color="#3b82f6" style={{ marginBottom: "12px" }} />
+                      <span style={{ fontSize: "32px", fontWeight: "bold" }}>{projectCount}</span>
+                      <span style={{ fontSize: "14px", fontWeight: 500, opacity: 0.9 }}>Projects</span>
+                    </div>
+                    <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                      <Briefcase size={28} color="#3b82f6" style={{ marginBottom: "12px" }} />
+                      <span style={{ fontSize: "32px", fontWeight: "bold" }}>1+ Yrs</span>
+                      <span style={{ fontSize: "14px", fontWeight: 500, opacity: 0.9 }}>Experience</span>
+                    </div>
+                  </div>
+                  
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: "32px",
+                      padding: "10px 28px",
+                      borderRadius: "999px",
+                      border: "1px solid rgba(255,255,255,0.4)",
+                      background: "rgba(255,255,255,0.15)",
+                      backdropFilter: "blur(8px)",
+                      fontSize: "14px",
+                      fontWeight: 500,
+                    }}
+                  >
+                    @nithinv
+                  </div>
+                </div>
               </div>
             </motion.div>
           )}
