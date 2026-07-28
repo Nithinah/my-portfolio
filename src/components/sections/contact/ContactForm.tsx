@@ -98,7 +98,8 @@ export default function ContactForm() {
       </motion.div>
 
       {/* FORM */}
-      <div className="space-y-4">
+      <form action="https://api.web3forms.com/submit" method="POST" className="space-y-4">
+        <input type="hidden" name="access_key" value="78e58bcc-5d97-42e6-81ec-3b58503d108d" />
         {/* NAME */}
         <motion.div
           variants={fieldVariants}
@@ -111,6 +112,9 @@ export default function ContactForm() {
             <User className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
 
             <input
+              type="text"
+              name="name"
+              required
               placeholder="Your Name"
               style={{
                 backgroundColor: '#F8FAFC',
@@ -134,6 +138,9 @@ export default function ContactForm() {
             <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
 
             <input
+              type="email"
+              name="email"
+              required
               placeholder="Your Email"
               style={{
                 backgroundColor: '#F8FAFC',
@@ -157,6 +164,8 @@ export default function ContactForm() {
             <MessageSquare className="absolute left-4 top-5 text-slate-400" />
 
             <textarea
+              name="message"
+              required
               rows={5}
               placeholder="Your Message"
               style={{
@@ -171,6 +180,7 @@ export default function ContactForm() {
 
         {/* BUTTON */}
         <motion.button
+          type="submit"
           variants={fieldVariants}
           initial="hidden"
           whileInView="show"
@@ -186,7 +196,7 @@ export default function ContactForm() {
           <Send size={16} />
           Send Message
         </motion.button>
-      </div>
+      </form>
 
       {/* SOCIAL */}
       <div style={{ borderColor: '#F1F5F9' }} className="border-t pt-5 mt-6">
