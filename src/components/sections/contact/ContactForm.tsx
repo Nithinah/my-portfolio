@@ -99,7 +99,7 @@ export default function ContactForm() {
 
       {/* FORM */}
       <form action="https://api.web3forms.com/submit" method="POST" className="space-y-4">
-        <input type="hidden" name="access_key" value="78e58bcc-5d97-42e6-81ec-3b58503d108d" />
+        <input type="hidden" name="access_key" value="" />
         {/* NAME */}
         <motion.div
           variants={fieldVariants}
